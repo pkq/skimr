@@ -46,7 +46,7 @@ kable_impl <- function(transformed_df, skim_type, format , digits, row.names,
                        escape, ...) {
   cat(sprintf("\nVariable type: %s", skim_type))
   if(is.null(align)) align <- rep("l", length(transformed_df))
-  kabled <- kable(transformed_df, caption = NULL, align = align, format, digits,
+  kabled <- knitr::kable(transformed_df, caption = NULL, align = align, format, digits,
         row.names,  col.names, format.args,  escape, ...)
   if (is_windows()) {
     kabled[] <- fix_unicode(kabled)
